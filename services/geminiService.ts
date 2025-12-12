@@ -222,7 +222,7 @@ export const runMultiAgentAnalysis = async (
   }
 
   const plannerResp = await ai.models.generateContent({
-    model: 'gemini-3-pro-preview',
+    model: 'gemini-2.5-flash',
     contents: { parts: plannerParts },
     config: {
       systemInstruction: PLANNER_SYSTEM_INSTRUCTION,
@@ -280,7 +280,7 @@ export const runMultiAgentAnalysis = async (
     }
 
     const builderResp = await ai.models.generateContent({
-      model: 'gemini-3-pro-preview',
+      model: 'gemini-2.5-flash',
       contents: { parts: [{ text: builderContext }] },
       config: {
         systemInstruction: BUILDER_SYSTEM_INSTRUCTION,
@@ -315,7 +315,7 @@ export const runMultiAgentAnalysis = async (
     `;
 
     const criticResp = await ai.models.generateContent({
-      model: 'gemini-3-pro-preview',
+      model: 'gemini-2.5-flash',
       contents: { parts: [{ text: criticPrompt }] },
       config: {
         systemInstruction: CRITIC_SYSTEM_INSTRUCTION,
@@ -404,7 +404,7 @@ export const generateCleaningCode = async (summary: DatasetSummary, recommendati
 
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-3-pro-preview',
+      model: 'gemini-2.5-flash',
       contents: prompt,
     });
     
