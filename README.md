@@ -171,5 +171,11 @@ KaggleMate provides highly organized, competition-ready outputs.
 
 ---
 
+---
+## 🌐 Live Demo:
+https://kaggle-mate.vercel.app/
+
+---
+
 **📜 License**
 Distributed under the MIT License. See LICENSE for more information. © 2025
