@@ -1,0 +1,5 @@
+{
+  "name": "KaggleMate",
+  "description": "Your AI-powered Kaggle competition assistant. Upload your dataset to get instant Auto-EDA, baseline models, and a winning strategy playbook.",
+  "requestFramePermissions": []
+}
