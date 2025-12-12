@@ -1,198 +1,175 @@
-📘 KaggleMate — Autonomous Multimodal Kaggle Data Scientist
+# 📘 KaggleMate — Autonomous Multimodal Kaggle Data Scientist
 
-A three-agent Gemini-powered system that analyzes datasets, builds ML pipelines, self-optimizes, and exports Kaggle-ready notebooks.
+An autonomous, multi-agent system powered by Gemini 2.5 that analyzes datasets, builds optimal ML pipelines, self-optimizes, and exports Kaggle-ready Jupyter notebooks.
 
-🚀 Overview
 
-KaggleMate is a fully autonomous, multimodal AI system designed to replicate the workflow of a Kaggle Grandmaster.
-It ingests raw datasets (CSV, PDF rulebooks, images, text notes), performs structured EDA, builds ML models, critiques its own code, iterates improvements, and finally exports a complete Jupyter Notebook ready for Kaggle or Colab.
 
-Built using a closed-loop multi-agent system (Planner → Builder → Critic) powered by Gemini 2.5 Flash, KaggleMate turns hours of data science work into minutes.
+## 🚀 Overview
 
-🧠 Core Features
-🔹 Autonomous Multi-Agent AI System
+KaggleMate is designed to replicate and automate the complete end-to-end workflow of a top-tier Kaggle Grandmaster. It significantly reduces the hours of manual data science labor into just a few minutes of autonomous AI reasoning.
 
-Planner Agent — Identifies target variable, problem type, model family, FE strategy, and CV methodology.
+The system ingests a variety of raw inputs and transforms them into high-quality machine learning artifacts:
 
-Builder Agent — Generates a production-ready .ipynb with preprocessing, feature engineering, model training, and submission generation.
+* **Raw Datasets** (CSVs)
+* **Supporting Documents** (PDFs)
+* **Diagrams** (Images)
+* **Text Notes**
 
-Critic Agent — Detects data leakage, metric mismatches, overfitting, and logic issues; assigns a 0–100 quality score.
+### Automated Workflow
 
-🔁 Self-Improving Iteration Loop
+KaggleMate performs the following critical data science steps autonomously:
 
-KaggleMate automatically cycles through:
+* Automated Exploratory Data Analysis (EDA)
+* Schema and relationship inference
+* Advanced Feature Engineering strategy
+* Optimal Model selection
+* Production-ready Code generation
+* Error detection and correction
+* Iterative optimization
+* Kaggle-ready Notebook export
 
-Plan → Build → Critique → Refine
+---
 
+## 🧠 Core Features
 
-Up to 3 iterations, enhancing:
+### 🔺 Autonomous Multi-Agent AI Engine
 
-Model performance
+KaggleMate operates on a closed-loop, multi-agent system powered by Gemini 2.5 Flash, ensuring comprehensive and critical pipeline development. 
 
-Code quality
+| Agent | Role | Key Responsibilities |
+| :--- | :--- | :--- |
+| **1. Planner Agent** | **"The Brain"** | Reads multimodal inputs, determines target variable & problem type (e.g., classification), recommends models (XGBoost, CatBoost), generates the Feature Engineering blueprint, and suggests CV approach. |
+| **2. Builder Agent** | **"The Engineer"** | Generates the full production-ready Jupyter notebook code, implementing preprocessing, FE, CV training loops, evaluation, and submission file creation. Revises code based on Critic feedback and supports Model Switching. |
+| **3. Critic Agent** | **"The Reviewer"** | Reviews generated code for data leakage, overfitting, metric/model pairing errors, and logic issues. Assigns a quality score (0–100) and **forces revision if score < 85**. |
 
-Feature engineering depth
+### 🔁 Autonomous Iteration Loop
 
-Includes a Self-Improvement Plot and Optimization Timeline.
+The system completes up to **3 cycles** of: **Plan → Build → Critique → Refine → Re-Evaluate**.
 
-📊 Automated EDA & Data Intelligence
-Smart Data Parsing
+Each iteration is designed to improve:
+* Model Score
+* Code Correctness
+* Feature Engineering Depth
+* Pipeline Reliability
 
-Auto-detects delimiters (,, ;, |, \t)
+Outputs include a **Self-Improvement Plot** (score across iterations) and an **Optimization Timeline** (a log of what changed and why).
 
-Validates UTF-8 encoding
+---
 
-Detects malformed rows
+## 📊 Data Analysis & Auto-EDA
 
-Infers column types (numeric, categorical, date)
+KaggleMate provides deep, actionable insights into the dataset through robust analysis.
 
-Interactive Visualization
+### ✔ Robust Smart Data Ingestion
 
-Numeric: Histograms, Area plots, Box plots
+* Auto-detects delimiter (`,`, `;`, `|`, `\t`).
+* Checks UTF-8 encoding.
+* Detects malformed rows.
+* Infers precise column types.
 
-Categorical: Bar charts, Word clouds
+### ✔ Interactive EDA Visualizations
 
-Datetime: Time-series charts
+All visualizations are exportable as PNG.
 
-PNG export for all charts
+| Column Type | Visualizations |
+| :--- | :--- |
+| **Numeric** | Histogram, Area Chart, Box Plot (with quartiles) |
+| **Categorical** | Bar Chart, Word Cloud |
+| **Datetime** | Time-series distribution |
 
-Schema & Domain Understanding
+### ✔ Schema & Domain Intelligence
 
-Table relationship inference (1–1, 1–many)
+* Relationship inference across multiple CSVs (1–1, 1–many).
+* SQL JOIN generation for merging data.
+* **Business rule detection**, e.g., $age > 0$ or $signup\_date \le order\_date$.
+* Unique key violation detection.
 
-Auto-generated SQL JOIN queries
+### ✔ Actionable Insights & Cleaning
 
-Business rule detection (e.g., age > 0)
+* Trend analysis and correlation comments.
+* Missing value summary and outlier detection.
+* Data quality scoring.
+* Cleaning recommendations and **one-click generation of a `clean_data()` Pandas script**.
 
-Domain constraint violation reporting
+---
 
-Actionable Insights
+## 💻 Developer Tools & Outputs
 
-Natural-language summaries of trends, outliers, correlations
+KaggleMate provides highly organized, competition-ready outputs.
 
-Cleaning recommendations
+* **📘 Jupyter Notebook Export:** A ready-to-run `.ipynb` file containing: imports, EDA, preprocessing, Feature Engineering, model building, cross-validation scoring, and submission generation.
+* **📝 Markdown Report Export:** A comprehensive report including insights, schema analysis, agent strategy, FE plan, and full agent logs.
+* **📂 CSV Export:** The processed, feature-engineered preview data can be saved as a CSV.
+* **💡 Syntax-Highlighted Code Viewer:** Every generated code block includes one-click copy functionality.
 
-One-click Pandas cleaning function generation
+---
 
-💻 Developer Tools
-Notebook Export
+## 🎨 UI/UX Features
 
-Downloads a fully structured .ipynb containing:
+* **Real-time Agent Terminal:** See the agents' thought process and actions live.
+* **Leaderboard Simulator:** Estimates your ranking based on the model's current score.
+* **History System:** LocalStorage persistence ensures you never lose your work.
+* Dark & Light Mode.
+* Drag-and-drop multi-file upload for all input types.
 
-Imports
+---
 
-EDA
+---
 
-Cleaning & preprocessing
+## 🛠 Tech Stack
+* Frontend: React + TypeScript
+* AI Engine: Gemini 2.5 Flash (Multi-Agent System)
+* Visualization: Recharts
+* Styling: TailwindCSS
+* Local Persistence: LocalStorage
+* Notebook Builder: JSON-to-.ipynb exporter
 
-Feature engineering
+---
 
-ML model training
+---
 
-Evaluation
+## 📦 Installation
+**To get started with KaggleMate, clone the repository and install dependencies:**
 
-Submission file creation
+* Bash
+* cd kagglemate
+* npm install
+* npm run dev
 
-Markdown Report
+---
 
-Full project analysis exported as a .md report:
+---
 
-EDA
+## 🧪 Usage.
+* Upload your data (CSV(s)) and any supporting context (PDFs, Images, Text notes).
 
-Strategy
+* KaggleMate parses the data and constructs the multimodal context.
 
-Schema inference
+* The autonomous agent loop runs (up to 3 iterations).
 
-Cleaning steps
+* Review: EDA visualizations, schema inference, and the optimization timeline.
 
-Agent logs
+* Download: The final Notebook (.ipynb), Markdown report, and Cleaned data (.csv).
 
-Final notebook code
+* Upload the notebook directly to your Kaggle competition!
 
-CSV Export
+---
 
-Previewed or cleaned datasets can be exported as CSV.
+---
 
-Syntax-Highlighted Code Viewer
+## 🔮 Future Enhancements
 
-With one-click copy buttons.
+* Automated hyperparameter tuning (e.g., Optuna integration).
 
-🎨 UI Features
+* Ensemble model generation (Stacking, Blending).
 
-Agent Terminal showing real-time Planner/Builder/Critic logs
+* Kaggle API leaderboard integration for direct submission.
 
-Leaderboard Simulator predicting hypothetical Kaggle ranking
+* LLM-generated feature synthesis (creating entirely new features).
 
-Session History saved to LocalStorage
+* Plug-in system for custom agents or modules.
 
-Dark/Light theme
+---
 
-Drag-and-drop file uploads (CSV, PDF, images, text, multiple files)
-
-🏗️ Architecture
-            User Uploads (CSV | PDF | Images | Text)
-                           │
-                           ▼
-                Multimodal Parser & Analyzer
-                           │
-      ┌──────────────┬───────────────┬──────────────┐
-      │              │               │              │
-      ▼              ▼               ▼              │
-Planner Agent   Builder Agent   Critic Agent   (Iteration Loop)
- "The Brain"     "Engineer"      "Reviewer"          ↑
-      └──────────────┴───────────────┴──────────────┘
-                           │
-                           ▼
-        Output Artifacts (Notebook | Report | UI Results)
-
-🛠️ Tech Stack
-
-Frontend: React, TypeScript, Recharts
-
-AI Engine: Gemini 2.5 Flash
-
-Notebook Generator: JSON → .ipynb builder
-
-Storage: LocalStorage (history)
-
-Styling: TailwindCSS
-
-📦 Installation
-git clone https://github.com/yourusername/kagglemate.git
-cd kagglemate
-npm install
-npm run dev
-
-🧪 How to Use
-
-Upload CSV(s), PDFs, images, or text files.
-
-KaggleMate analyzes the dataset using multimodal reasoning.
-
-Agents run the autonomous loop to build and refine the solution.
-
-Explore EDA charts, insights, schema, and cleaning suggestions.
-
-Download the complete .ipynb notebook or .md report.
-
-Upload the notebook directly to Kaggle competitions.
-
-
-
-🧩 Future Enhancements
-
-Advanced hyperparameter tuning
-
-Integration with Kaggle API for leaderboard scoring
-
-Automated ensemble generation
-
-Multi-model comparison dashboard
-
-🏅 Contributing
-
-Pull requests are welcome! Please open an issue first to discuss changes.
-
-📜 License
-
-MIT License
+**📜 License**
+Distributed under the MIT License. See LICENSE for more information. © 2025
